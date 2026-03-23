@@ -10,9 +10,20 @@ config_version=5
 
 [application]
 
-config/name="jame-gam"
+config/name="CoinFountainSweeper"
+run/main_scene="uid://dq185ba7g7220"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://cunbufwxkgiek"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [physics]
 
@@ -21,3 +32,4 @@ config/icon="res://icon.svg"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+anti_aliasing/quality/msaa_2d=1

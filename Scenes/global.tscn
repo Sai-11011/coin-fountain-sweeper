@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cunbufwxkgiek"]
+
+[ext_resource type="Script" uid="uid://bykap5m7gshl4" path="res://Scripts/global.gd" id="1_koean"]
+
+[node name="Global" type="Node" unique_id=819889788]
+script = ExtResource("1_koean")

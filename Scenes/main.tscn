@@ -1,3 +1,85 @@
 [gd_scene format=3 uid="uid://dq185ba7g7220"]
 
+[ext_resource type="Script" uid="uid://bb8mr16xnyrry" path="res://Scripts/main.gd" id="1_jjgbg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
+size = Vector2(50, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
+size = Vector2(900, 50)
+
 [node name="Main" type="Node2D" unique_id=2020920455]
+script = ExtResource("1_jjgbg")
+
+[node name="FountainPlaceholders" type="Node2D" parent="." unique_id=146423570]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="background" type="ColorRect" parent="FountainPlaceholders" unique_id=1957223008]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+
+[node name="Walls" type="Node2D" parent="FountainPlaceholders" unique_id=1285616369]
+
+[node name="LeftWall" type="ColorRect" parent="FountainPlaceholders/Walls" unique_id=951400319]
+offset_left = 190.0
+offset_top = 260.0
+offset_right = 240.0
+offset_bottom = 660.0
+mouse_filter = 2
+color = Color(0.6627451, 0.6627451, 0.6627451, 1)
+
+[node name="RightWall" type="ColorRect" parent="FountainPlaceholders/Walls" unique_id=1883627595]
+offset_left = 1040.0
+offset_top = 260.0
+offset_right = 1090.0
+offset_bottom = 660.0
+mouse_filter = 2
+color = Color(0.6627451, 0.6627451, 0.6627451, 1)
+
+[node name="BottomWall" type="ColorRect" parent="FountainPlaceholders/Walls" unique_id=1673704008]
+offset_left = 190.0
+offset_top = 660.0
+offset_right = 1090.0
+offset_bottom = 710.0
+mouse_filter = 2
+color = Color(0.6627451, 0.6627451, 0.6627451, 1)
+
+[node name="Water" type="ColorRect" parent="FountainPlaceholders/Walls" unique_id=1482553255]
+offset_left = 240.0
+offset_top = 360.0
+offset_right = 1040.0
+offset_bottom = 660.0
+mouse_filter = 2
+color = Color(0, 1, 1, 0.7058824)
+
+[node name="RedLine" type="ColorRect" parent="FountainPlaceholders/Walls" unique_id=1285712977]
+offset_left = 240.0
+offset_top = 350.0
+offset_right = 1040.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Timers" type="Node" parent="." unique_id=2108689419]
+
+[node name="SpawnTimer" type="Timer" parent="Timers" unique_id=1475968178]
+autostart = true
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=345947501]
+
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=2029345561]
+position = Vector2(215, 460)
+shape = SubResource("RectangleShape2D_jjgbg")
+
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=1354942958]
+position = Vector2(1065, 460)
+shape = SubResource("RectangleShape2D_jjgbg")
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls" unique_id=1340137395]
+position = Vector2(640, 685)
+shape = SubResource("RectangleShape2D_bo1nx")
+
+[connection signal="timeout" from="Timers/SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://buw41pk3sscrb"]
+
+[ext_resource type="Script" uid="uid://c068iueojb2qr" path="res://Scripts/coin.gd" id="1_jgi06"]
+[ext_resource type="Texture2D" uid="uid://drrvijheexc0k" path="res://Placeholders/Coins/Coin-rectangle.png" id="2_jgi06"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g537i"]
+size = Vector2(56.5, 10)
+
+[node name="Coin" type="RigidBody2D" unique_id=1221397100]
+input_pickable = true
+script = ExtResource("1_jgi06")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1411175212]
+texture = ExtResource("2_jgi06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=117652495]
+position = Vector2(-0.75, -2)
+shape = SubResource("RectangleShape2D_g537i")
