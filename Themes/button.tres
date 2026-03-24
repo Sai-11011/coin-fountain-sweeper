@@ -1,0 +1,49 @@
+[gd_resource type="Theme" format=3 uid="uid://csvokgaaskchv"]
+
+[ext_resource type="FontFile" uid="uid://d6eq20vegrbl" path="res://Assets/Fonts/LemonMilkbold.otf" id="1_8vrxr"]
+
+[sub_resource type="Gradient" id="Gradient_et3m0"]
+colors = PackedColorArray(0.42352942, 0.9137255, 0.8, 1, 0.05882353, 0.27058825, 0.53333336, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_812qm"]
+gradient = SubResource("Gradient_et3m0")
+fill_from = Vector2(0.5347826, 0)
+fill_to = Vector2(0.49565217, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gv6e5"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("GradientTexture2D_812qm")
+
+[sub_resource type="Gradient" id="Gradient_fiq7h"]
+colors = PackedColorArray(0.42352942, 0.9137255, 0.8, 1, 0.05882353, 0.27058825, 0.53333336, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gmksc"]
+gradient = SubResource("Gradient_fiq7h")
+fill_from = Vector2(0.5347826, 0)
+fill_to = Vector2(0.49565217, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pv870"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("GradientTexture2D_gmksc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixe5a"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("GradientTexture2D_gmksc")
+
+[resource]
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 3
+Button/font_sizes/font_size = 36
+Button/fonts/font = ExtResource("1_8vrxr")
+Button/styles/hover = SubResource("StyleBoxTexture_gv6e5")
+Button/styles/normal = SubResource("StyleBoxTexture_pv870")
+Button/styles/pressed = SubResource("StyleBoxTexture_ixe5a")

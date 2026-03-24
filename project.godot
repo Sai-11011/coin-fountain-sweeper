@@ -31,6 +31,10 @@ mouse_cursor/custom_image="uid://c1t74v1uqfjr2"
 
 Coins=""
 
+[gui]
+
+theme/custom_font="uid://b4kxwvc6nw0sx"
+
 [layer_names]
 
 2d_physics/layer_1="water"
