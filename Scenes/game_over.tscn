@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbfhggauibbmm"]
 
 [ext_resource type="Script" uid="uid://dnhqs5ekifleb" path="res://Scripts/game_over.gd" id="1_ojehl"]
+[ext_resource type="Theme" uid="uid://csvokgaaskchv" path="res://Themes/button.tres" id="2_8fo1c"]
 
 [node name="GameOver" type="Control" unique_id=528653836]
 layout_mode = 3
@@ -35,6 +36,7 @@ theme_override_constants/margin_bottom = 100
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=839712239]
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_constants/separation = 30
 
 [node name="GameOver" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1645184011]
 layout_mode = 2
@@ -57,11 +59,13 @@ layout_mode = 2
 [node name="RestartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1194096172]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("2_8fo1c")
 text = "Restart"
 
 [node name="MenuButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1543324536]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("2_8fo1c")
 text = "Menu"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

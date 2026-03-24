@@ -4,7 +4,7 @@ extends Node2D
 @onready var sparkle_scene: PackedScene = load(Global.SCENES.sparkle)
 @onready var splash_scene: PackedScene = load(Global.SCENES.splash)
 @onready var spawn_timer: Timer = $Timers/SpawnTimer
-@onready var water_sprite: Sprite2D = $Fountain/Water
+@onready var water_sprite: AnimatedSprite2D = $Fountain/Water
 @onready var coin_container: Node = $CoinContainer
 @onready var effects_container: Node = $EffectsContainer
 @onready var game_over_scene: Control = $CanvasLayer/GameOver 
@@ -14,7 +14,7 @@ var floor_y_position: float = 360.0
 var total_water_displacement: float = 0.0 
 # The starting state of the water (Empty)
 var water_start_scale_y: float = 0.85
-var water_start_pos_y: float = 480.0
+var water_start_pos_y: float = 490.0
 
 # The maximum state of the water (Game Over)
 var water_max_scale_y: float = 1.3
