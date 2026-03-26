@@ -2,6 +2,7 @@ extends Node
 
 @onready var click_container = $CoinClick
 @onready var drop_container = $CoinDrop
+@onready var click = $CoinClick/Click1
 
 # This runs automatically when the game starts to randomize the seed
 func _ready() -> void:
@@ -20,6 +21,9 @@ func play_coin_click() -> void:
 		random_sound.pitch_scale = randf_range(0.85, 1.15)
 		
 		random_sound.play()
+
+func play_button_click() -> void:
+	click.play()
 
 func play_coin_drop() -> void:
 	# Get all the AudioStreamPlayers inside the CoinDrop node

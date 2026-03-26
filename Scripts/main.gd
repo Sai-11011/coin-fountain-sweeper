@@ -62,7 +62,7 @@ func spawn_coin() -> void:
 		# PHASE 3 (35+ seconds): Introduce Gold (Heavy)
 		if roll < 0.70:
 			random_key = "normal"
-		elif roll < 0.85:
+		elif roll < 0.90:
 			random_key = "bouncy"
 		else:
 			random_key = "heavy" # 15% chance for Gold

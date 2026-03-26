@@ -15,8 +15,10 @@
 [ext_resource type="AudioStream" uid="uid://vbm5m3e35k8g" path="res://AUDIO EFFECTS/Impacts Wav format/Impact 5.wav" id="13_jdih1"]
 [ext_resource type="AudioStream" uid="uid://b1ppt5dcqagef" path="res://AUDIO EFFECTS/Impacts Wav format/Impact 6.wav" id="14_tljh5"]
 [ext_resource type="AudioStream" uid="uid://cctai3ooad5en" path="res://AUDIO EFFECTS/Impacts Wav format/Impact 7.wav" id="15_2gmef"]
+[ext_resource type="AudioStream" uid="uid://c3jfch70qy105" path="res://Music/music delicius/Agüita de jamaica.mp3" id="16_bkjj7"]
 
 [node name="AudioManager" type="Node" unique_id=1869297544]
+process_mode = 3
 script = ExtResource("1_vhwx7")
 
 [node name="CoinClick" type="Node" parent="." unique_id=668300790]
@@ -64,3 +66,7 @@ stream = ExtResource("14_tljh5")
 
 [node name="Impact7" type="AudioStreamPlayer" parent="CoinDrop" unique_id=1547785910]
 stream = ExtResource("15_2gmef")
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1423256878]
+stream = ExtResource("16_bkjj7")
+autoplay = true

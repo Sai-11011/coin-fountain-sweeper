@@ -8,7 +8,7 @@ const SCENES :Dictionary = {
 	"sparkle":"uid://bih7g88xl275c",
 	"splash":"uid://chi47vo2opelm",
 	"start":"uid://b3k3jajoe6tme",
-	"game_over":"",
+	"game_over":"uid://cbfhggauibbmm",
 }
 
 const COIN_TYPES :Dictionary = {
