@@ -15,11 +15,11 @@ var floor_y_position: float = 360.0
 var total_water_displacement: float = 0.0 
 # The starting state of the water (Empty)
 var water_start_scale_y: float = 0.85
-var water_start_pos_y: float = 490.0
+var water_start_pos_y: float = 510.0
 
 # The maximum state of the water (Game Over)
 var water_max_scale_y: float = 1.3
-var water_max_pos_y: float = 435.0
+var water_max_pos_y: float = 455.0
 
 # --- DIFFICULTY SETTINGS ---
 var base_spawn_time: float = 1.0 # The starting speed (1 coin per second)
@@ -27,7 +27,7 @@ var min_spawn_time: float = 0.25 # The absolute fastest it can get (4 coins per 
 var speedup_factor: float = 0.015 # How much time to shave off the timer every second
 
 # You might need to adjust this number through testing!
-var max_displacement_allowed: float = 50.0
+var max_displacement_allowed: float = 100.0
 
 func _ready() -> void:
 	Global.is_game_over = false
