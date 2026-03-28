@@ -7,8 +7,23 @@ extends Control
 @onready var info := $Info
 var credits_tween: Tween
 
+var info_text := """
+[center][font_size=24][pulse freq=0.5 color=#ffffff80][color=#ffd700][b]The Fountain of Wishes[/b][/color][/pulse][/font_size]
+
+An endless shower of magic coins is filling the basin. 
+Your goal is simple: [b]Survive as long as you can.[/b]
+
+Click the falling coins to shatter them, claim their [color=#ffd700]Favor[/color], and keep the [color=#40e0d0]water level[/color] from overflowing. 
+
+Spend your Favor in the [color=#ffb6c1]Wish Shop[/color] to unleash powerful lifelines when the chaos becomes too much. 
+
+[font_size=16] [/font_size]
+
+[wave amp=20.0 freq=3.0 connected=1][color=#b0c4de]How long can you endure the cascade?[/color][/wave][/center]
+"""
+
 func _ready() -> void:
-	credit_text.text = """[center][pulse freq=0.5 color=#ffffff80][i][color=#b0c4de][font_size=20]"Fountain of Wishes is about collecting fleeting rewards from a mysterious source that never stops flowing. The longer you endure, the more you gather, but it never truly ends — only your ability to keep up does."[/font_size][/color][/i][/pulse]
+	credit_text.text = """[center]
 
 [font_size=12] [/font_size]
 
