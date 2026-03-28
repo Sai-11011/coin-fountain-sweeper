@@ -4,6 +4,7 @@ extends Control
 @onready var settings := load(Global.SCENES.settings)
 @onready var credits := $Credits
 @onready var credit_text := $Credits/RichTextLabel
+@onready var info := $Info
 var credits_tween: Tween
 
 func _ready() -> void:
@@ -95,3 +96,13 @@ func _close_credits() -> void:
 		# Stop the animation dead in its tracks if they skipped it
 		if credits_tween and credits_tween.is_valid():
 			credits_tween.kill()
+
+
+func _on_back_button_pressed() -> void:
+	AudioManager.play_button_click()
+	info.hide()
+
+
+func _on_intro_button_pressed() -> void:
+	AudioManager.play_button_click()
+	info.show()

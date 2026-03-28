@@ -13,7 +13,8 @@ config_version=5
 config/name="CoinFountainSweeper"
 run/main_scene="uid://b3k3jajoe6tme"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://xs0ubumk3gbw"
+config/icon="uid://b8k2ra4ilvdsa"
 
 [audio]
 
