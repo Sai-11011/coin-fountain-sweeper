@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bkk46hbvhy2y5" path="res://Scripts/start_menu.gd" id="1_juhg0"]
 [ext_resource type="Texture2D" uid="uid://beut0dyhjwi16" path="res://Assets/UI/ui_bg.png" id="2_a43kq"]
+[ext_resource type="Texture2D" uid="uid://cqs8j24fltb0n" path="res://Assets/UI/name.png" id="3_626he"]
 [ext_resource type="Theme" uid="uid://csvokgaaskchv" path="res://Themes/button.tres" id="3_a43kq"]
-[ext_resource type="Texture2D" uid="uid://c2oqg0eswwjph" path="res://Assets/Coins/golden_coin.png" id="3_m6uer"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a43kq"]
 bg_color = Color(0, 0, 0, 0.78039217)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_626he"]
+bg_color = Color(0, 0, 0, 0.7058824)
 
 [node name="StartMenu" type="Control" unique_id=109261281]
 process_mode = 3
@@ -29,32 +32,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -445.0
+offset_top = -313.0
+offset_right = 445.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 50
 
-[node name="Title" type="Label" parent="VBoxContainer" unique_id=1376940781]
+[node name="Title" type="TextureRect" parent="VBoxContainer" unique_id=1432514965]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8980392, 0.627451, 0.043137256, 1)
-theme_override_font_sizes/font_size = 80
-text = "C   ins"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Title" unique_id=480210676]
-position = Vector2(105.5, 56.5)
-scale = Vector2(0.36, 0.36)
-texture = ExtResource("3_m6uer")
-
-[node name="Instructions" type="Label" parent="VBoxContainer" unique_id=1772150688]
-layout_mode = 2
-text = "Click coins to clear them. 
-Don't overflow!"
-horizontal_alignment = 1
+texture = ExtResource("3_626he")
+stretch_mode = 3
 
 [node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1018985277]
 layout_mode = 2
@@ -62,20 +51,33 @@ size_flags_horizontal = 4
 theme = ExtResource("3_a43kq")
 text = "Start Game"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=468211077]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1686963919]
 layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("3_a43kq")
-theme_override_font_sizes/font_size = 36
-text = "Settings
-"
+theme_override_constants/separation = 100
+alignment = 1
 
-[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=23681694]
+[node name="IntroButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=393466762]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme = ExtResource("3_a43kq")
+text = "Intro"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=23681694]
+custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_a43kq")
 theme_override_font_sizes/font_size = 36
 text = "Credits
+"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=468211077]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_a43kq")
+theme_override_font_sizes/font_size = 36
+text = "Settings
 "
 
 [node name="Credits" type="Panel" parent="." unique_id=1768875410]
@@ -105,6 +107,65 @@ grow_vertical = 2
 bbcode_enabled = true
 scroll_active = false
 
+[node name="Info" type="Panel" parent="." unique_id=1009126842]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_626he")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info" unique_id=785888389]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+text = "[center][font_size=24][pulse freq=0.5 color=#ffffff80][color=#ffd700][b]The Fountain of Wishes[/b][/color][/pulse][/font_size]
+
+An endless shower of magic coins is filling the basin. 
+Your goal is simple: [b]Survive as long as you can.[/b]
+
+Click the falling coins to shatter them, claim their [color=#ffd700]Favor[/color], and keep the [color=#40e0d0]water level[/color] from overflowing. 
+
+Spend your Favor in the [color=#ffb6c1]Wish Shop[/color] to unleash powerful lifelines when the chaos becomes too much. 
+
+[font_size=16] [/font_size]
+
+[wave amp=20.0 freq=3.0 connected=1][color=#b0c4de]How long can you endure the cascade?[/color][/wave][/center]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="Info" unique_id=989595645]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -89.0
+offset_right = 46.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_a43kq")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/IntroButton" to="." method="_on_intro_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Info/BackButton" to="." method="_on_back_button_pressed"]
